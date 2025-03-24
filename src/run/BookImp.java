@@ -80,7 +80,7 @@ public class BookImp {
         }
     }
     public static void sapXepGiaTangDan() {
-        books.sort(Comparator.comparingDouble(Book::getPrice));
+        books.sort(Comparator.comparingDouble(book -> book.getPrice()));
     }
 
     public static void sapXepLoiNhuanGiamDan() {
@@ -91,7 +91,7 @@ public class BookImp {
         sc.nextLine();
         System.out.print("Nhập tên sách cần tìm: ");
         String name = sc.nextLine();
-        books.stream().filter(book -> book.getBookName().equalsIgnoreCase(name)).forEach(Book::display);
+        books.stream().filter(book -> book.getBookName().equalsIgnoreCase(name)).forEach(book -> book.display());
     }
 
     public static void thongKeTheoNam() {
